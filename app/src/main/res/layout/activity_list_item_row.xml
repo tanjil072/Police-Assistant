@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="188dp"
+    android:layout_marginBottom="8dp"
+    android:background="@drawable/roundeditem"
+    android:orientation="horizontal"
+    android:padding="16dp">
+
+
+    <ImageView
+        android:id="@+id/postImage"
+        android:layout_width="100dp"
+        android:adjustViewBounds="true"
+        android:transitionName="pic"
+        android:layout_height="100dp"
+        android:src="@drawable/deafaultpic"
+       />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp">
+
+        <TextView
+            android:id="@+id/time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Today, 10:00 AM"
+            android:textColor="#8D6E63"
+            android:textSize="10dp" />
+
+        <Button
+            android:id="@+id/savePost"
+            android:layout_width="80dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/roundcorner"
+            android:drawableLeft="@drawable/ic_action_save"
+            android:text="Save Post"
+            android:textColor="#ffffff"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/post_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/time"
+            android:text="This is the crime"
+            android:textColor="#5f4339"
+            android:textSize="24dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post_title"
+            android:text="Name: "
+            android:textColor="#5f4339"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/post_title"
+            android:layout_toRightOf="@id/name"
+            android:transitionName="Name"
+            android:text="Abu Ubaida Akash"
+            android:textColor="#5f4339"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/fathername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:text="Father's Name: "
+            android:textColor="#5f4339"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/fatherfullname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/name"
+            android:layout_toRightOf="@id/fathername"
+            android:text="Qamruzzaman"
+            android:transitionName="FatherName"
+            android:textColor="#5f4339"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/district"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fathername"
+            android:text="District: "
+            android:textColor="#5f4339"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/districtname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/fathername"
+            android:layout_toRightOf="@id/district"
+            android:text="Chapai Nawabganj"
+            android:transitionName="District"
+            android:maxLength="20"
+            android:textColor="#5f4339"
+            android:textSize="14dp" />
+
+        <TextView
+            android:id="@+id/rewardable"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/district"
+            android:text="Rewards: "
+            android:textColor="#5f4339"
+            android:textSize="14dp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/district"
+            android:layout_toRightOf="@id/rewardable"
+            android:text="100 XP"
+            android:maxLength="20"
+            android:transitionName="Rewards"
+            android:textColor="#5f4339"
+            android:textSize="14dp" />
+
+        <ImageView
+            android:id="@+id/star1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rewardable"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/ic_action_star" />
+
+        <ImageView
+            android:id="@+id/star2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rewardable"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/star1"
+            android:src="@drawable/ic_action_star" />
+
+        <ImageView
+            android:id="@+id/star3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/rewardable"
+            android:layout_marginTop="8dp"
+            android:layout_toRightOf="@id/star2"
+            android:src="@drawable/ic_action_star" />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

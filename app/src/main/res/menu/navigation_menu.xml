@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/profile"
+            android:icon="@drawable/ic_action_profile"
+            android:title="Profile"></item>
+        <item
+            android:id="@+id/savedposts"
+            android:icon="@drawable/ic_action_savedposts"
+            android:title="Saved posts"></item>
+        <item
+            android:id="@+id/rewards"
+            android:icon="@drawable/ic_action_rewards"
+            android:title="Your rewards"></item>
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item
+                android:id="@+id/settings"
+                android:icon="@drawable/ic_action_settings"
+                android:title="Settings"></item>
+            <item
+                android:id="@+id/logout"
+                android:icon="@drawable/ic_action_logout"
+                android:title="Log out"></item>
+        </menu>
+
+    </item>
+
+</menu>

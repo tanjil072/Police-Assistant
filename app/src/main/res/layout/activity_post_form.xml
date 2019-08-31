@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_secondary">
+
+    <TextView
+        android:id="@+id/complaintext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary"
+        android:gravity="center"
+        android:padding="8dp"
+        android:text="C O M P L A I N"
+        android:typeface="serif"
+        android:textColor="@color/background_secondary"
+        android:textSize="25dp"/>
+
+    <TextView
+        android:id="@+id/detailstext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/complaintext"
+        android:background="@color/primary"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:text="S H E E T"
+        android:typeface="serif"
+        android:textColor="@color/background_secondary"
+        android:textSize="25dp" />
+
+    <ScrollView
+        android:id="@+id/scrollviewcomplain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/detailstext"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="0dp"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/idtext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:gravity="center"
+                android:text="Post ID: 2019"
+                android:textColor="@color/light"
+                android:textStyle="italic"
+                android:typeface="monospace"/>
+
+            <!--<TextView-->
+            <!--android:id="@+id/idmain"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_toRightOf="@id/idtext"-->
+            <!--android:text="2019"-->
+            <!--android:textColor="@color/light"-->
+            <!--android:textStyle="italic"-->
+            <!--android:layout_below="@id/detailstext"/>-->
+
+            <TextView
+                android:id="@+id/titletext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/idtext"
+                android:layout_margin="5dp"
+                android:gravity="center"
+                android:text="Complain Title"
+                android:textColor="@color/primary"
+                android:textSize="20dp"
+                android:textStyle="bold"
+                android:typeface="serif"/>
+
+            <EditText
+                android:id="@+id/titlemain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titletext"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                android:background="@drawable/textboxborder"
+                android:gravity="center"
+                android:padding="5dp"
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="monospace"
+                android:hint="Type of complain"/>
+
+            <TextView
+                android:id="@+id/criminaltext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/titlemain"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="30dp"
+                android:text="Criminal's name: "
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/criminalmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminaltext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Full name"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:id="@+id/criminalfathertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalmain"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Father's name: "
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/criminalfathermain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalfathertext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Father's full name"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:id="@+id/criminalmothertext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalfathermain"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Mother's name: "
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/criminalmothermain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalmothertext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Mother's full name"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:id="@+id/preaddtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalmothermain"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Present Address: "
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif"/>
+
+            <EditText
+                android:id="@+id/preaddmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/preaddtext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Current address"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:id="@+id/peraddtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/preaddmain"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Permanent Address: "
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif"/>
+
+            <EditText
+                android:id="@+id/peraddmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/peraddtext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:hint="Current/Hometown address"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:id="@+id/descriptext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/peraddmain"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Description: "
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif"/>
+
+            <EditText
+                android:id="@+id/descripmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descriptext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/textboxborder"
+                android:hint="Write the announcement elaborately...
+                                    "
+                android:padding="8dp"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:typeface="monospace"/>
+
+            <TextView
+                android:id="@+id/uppictext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/descripmain"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="20dp"
+                android:text="Upload Photo:"
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif"/>
+
+            <RelativeLayout
+                android:id="@+id/uppicbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uppictext"
+                android:layout_margin="10dp">
+
+                <TextView
+                    android:id="@+id/uppicname"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_toLeftOf="@id/uppicbutton"
+                    android:background="@drawable/textboxborder"
+                    android:typeface="monospace"
+                    android:textColor="#000"
+                    android:padding="5dp"/>
+                <Button
+                    android:id="@+id/uppicbutton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/complainbackgroundbox"
+                    android:text="Choose"
+                    android:textAllCaps="true"
+                    android:textColor="@color/background_secondary" />
+
+            </RelativeLayout>
+
+            <TextView
+                android:id="@+id/rewardtext"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/uppicbox"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:text="Rewards:"
+                android:textColor="@color/primary"
+                android:textSize="17dp"
+                android:typeface="serif" />
+
+            <EditText
+                android:id="@+id/rewardmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rewardtext"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/textboxborder"
+                android:hint="Rewards to be provided...
+                                    "
+                android:padding="8dp"
+                android:textColor="#000"
+                android:textSize="17dp"
+                android:typeface="monospace"/>
+
+                <Button
+                    android:id="@+id/postbutton"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_below="@id/rewardmain"
+                    android:text="Post"
+                    android:textStyle="bold"
+                    android:background="@drawable/complainbackgroundbox"
+                    android:textColor="@color/background_secondary"/>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>

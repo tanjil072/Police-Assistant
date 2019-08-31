@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_secondary">
+
+    <ImageView
+        android:id="@+id/imagetransbackground"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="#20000000"
+        android:transitionName="listPicTransition"/>
+
+    <ImageView
+        android:id="@+id/criminalpic"
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:transitionName="pic"
+        android:padding="10dp"
+        android:src="@drawable/profilepic2"
+        />
+
+    <ImageButton
+        android:id="@+id/downloadpic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignEnd="@id/imagetransbackground"
+        android:layout_alignBottom="@id/imagetransbackground"
+        android:src="@drawable/ic_action_download"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <ImageButton
+        android:id="@+id/sharepic"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_alignBottom="@id/imagetransbackground"
+        android:layout_toLeftOf="@id/downloadpic"
+        android:src="@drawable/ic_action_share"
+        style="?android:attr/borderlessButtonStyle"/>
+
+    <ScrollView
+        android:id="@+id/scrollviewPostExpand"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/criminalpic"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="20dp">
+
+            <TextView
+                android:id="@+id/postid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@id/postidnumb"
+                android:text="Post ID:"
+                android:textColor="#5f4339"
+                android:textSize="13dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/postidnumb"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginRight="10dp"
+                android:text="17321"
+                android:textColor="#5f4339"
+                android:textSize="13dp"
+                android:textStyle="italic" />
+
+            <TextView
+                android:id="@+id/criminalname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/postid"
+                android:layout_marginLeft="10dp"
+                android:text="Name"
+                android:textColor="#5f4339"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nameboxcrim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalname"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/textbox"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:transitionName="Name"
+                android:text="This is criminal's name"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/criminalfathername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameboxcrim"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Father's Name"
+                android:textColor="#5f4339"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nameboxfath"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalfathername"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/textbox"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:transitionName="FatherName"
+                android:text="This is the name of criminal's father"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/criminalmothername"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameboxfath"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="8dp"
+                android:text="Mother's Name"
+                android:textColor="#5f4339"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nameboxmoth"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/criminalmothername"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/textbox"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:text="This is the name of criminal's mother"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/presentadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameboxmoth"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Present Address"
+                android:textColor="#5f4339"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nameboxpreadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/presentadd"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/textbox"
+                android:inputType="textMultiLine"
+                android:transitionName="District"
+                android:padding="5dp"
+                android:text="This..................................................is.............................the.................present.....................................................address"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/permanentadd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameboxpreadd"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Permanent Address"
+                android:textColor="#5f4339"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/nameboxperadd"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/permanentadd"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/textbox"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:text="This..................................................is.............................the.................permanent.....................................................address"
+                android:textColor="#000000" />
+
+            <TextView
+                android:id="@+id/description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/nameboxperadd"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="10dp"
+                android:text="Description"
+                android:textColor="#5f4339"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+
+
+            <TextView
+                android:id="@+id/nameboxdescrip"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/description"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/textbox"
+                android:inputType="textMultiLine"
+                android:padding="5dp"
+                android:text="This_____________________________________________________________is_______________________________the_______________________description________________________________of_________________________the______________________________________crime"
+                android:textColor="#000000" />
+
+            <RelativeLayout
+                android:id="@+id/rewardset"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/nameboxdescrip"
+                android:layout_margin="10dp"
+                android:background="@drawable/textboxborder">
+
+                <TextView
+                    android:id="@+id/rewardpost"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rewardbox"
+                    android:padding="5dp"
+                    android:text="Rewards"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/nameboxrewards"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rewardpost"
+                    android:inputType="textMultiLine"
+                    android:padding="10dp"
+                    android:transitionName="Rewards"
+                    android:text="Something will be given"
+                    android:textColor="#000000" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/announcement"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rewardset"
+                android:layout_margin="10dp"
+                android:background="@drawable/textboxborder">
+
+                <TextView
+                    android:id="@+id/attention"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rewardbox"
+                    android:drawableLeft="@drawable/ic_action_announcement"
+                    android:padding="5dp"
+                    android:text="Attention"
+                    android:textColor="#fff"
+                    android:textSize="18dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/attentiontext"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/attention"
+                    android:padding="10dp"
+                    android:text="No general user can see your messages, attached files, photos or videos. All your informations will be kept private."
+                    android:textColor="#000" />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/commentsection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/announcement"
+                android:layout_margin="10dp"
+                android:background="@drawable/textboxborder">
+
+                <EditText
+                    android:id="@+id/comment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/textbox"
+                    android:hint="Send message...
+"
+                    android:inputType="textMultiLine"
+                    android:padding="10dp"
+                    android:textColor="#000" />
+
+                <Button
+                    android:id="@+id/send"
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/comment"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/rewardbox"
+                    android:text="Send"
+                    android:textAllCaps="false"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/addfile"
+                    android:layout_width="95dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/comment"
+                    android:background="@drawable/rewardbox"
+                    android:drawableLeft="@drawable/ic_action_attach_file"
+                    android:text="Add Files"
+                    android:textAllCaps="false"
+                    android:textColor="#fff" />
+
+                <Button
+                    android:id="@+id/addpic"
+                    android:layout_width="95dp"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/comment"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@id/addfile"
+                    android:background="@drawable/rewardbox"
+                    android:drawableLeft="@drawable/ic_action_photo"
+                    android:text="Photos/Videos"
+                    android:textAllCaps="false"
+                    android:textColor="#fff" />
+
+
+                <Button
+                    android:id="@+id/call"
+                    android:layout_width="match_parent"
+                    android:layout_height="35dp"
+                    android:layout_below="@id/addfile"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/rewardbox"
+                    android:drawableLeft="@drawable/ic_action_voice_call"
+                    android:paddingHorizontal="115dp"
+                    android:text="Make a Call"
+                    android:textAllCaps="false"
+                    android:textColor="#fff" />
+
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>

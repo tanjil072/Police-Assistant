@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "263063724936",
+    "firebase_url": "https://police-assistant-d85ca.firebaseio.com",
+    "project_id": "police-assistant-d85ca",
+    "storage_bucket": "police-assistant-d85ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263063724936:android:aa535ecfd42b2286",
+        "android_client_info": {
+          "package_name": "com.example.user.policeassistant"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263063724936-8mbq4ggiqhns2i7tjbopn04r0mbpshk5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.user.policeassistant",
+            "certificate_hash": "a48a215da317dcd1b6a1640f9680b4b31093b7c0"
+          }
+        },
+        {
+          "client_id": "263063724936-rmv4b1f0mejnp8tkc2g0g6541ng94ulc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpOGbmuQogiGDL5WoMSMl71y88_cRaKl4"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263063724936-rmv4b1f0mejnp8tkc2g0g6541ng94ulc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

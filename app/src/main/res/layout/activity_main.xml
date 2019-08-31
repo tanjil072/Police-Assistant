@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background_primary"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:adjustViewBounds="true"
+        android:maxWidth="130dp"
+        android:maxHeight="130dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/logo" />
+
+    <EditText
+        android:id="@+id/usernameID"
+        android:layout_width="300dp"
+        android:layout_height="43dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/inputbox"
+        android:drawableLeft="@drawable/ic_action_email_signin"
+        android:hint=" Email"
+        android:paddingLeft="8dp"
+        android:textColor="#5f4339"
+        android:textColorHint="#756B6A"
+        android:inputType="textEmailAddress"
+        android:layout_marginBottom="2dp"/>
+
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="10dp"
+        app:hintEnabled="false"
+        app:passwordToggleContentDescription="password"
+        app:passwordToggleEnabled="true"
+        app:passwordToggleTint="@color/colorAccent">
+
+        <android.support.design.widget.TextInputEditText
+            android:id="@+id/passwordID"
+            style="@style/Widget.AppCompat.EditText"
+            android:layout_width="300dp"
+            android:layout_height="43dp"
+            android:layout_gravity="center"
+            android:background="@drawable/inputbox"
+            android:drawableStart="@drawable/ic_action_password_signin"
+            android:hint=" Password"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            android:textColor="#5f4339"
+            android:textColorHint="#756B6A" />
+
+
+    </android.support.design.widget.TextInputLayout>
+
+    <RadioGroup
+        android:id="@+id/RadioGroup"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="60dp"
+        android:gravity="start"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/RadioGen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="General"
+            android:textColor="#341c13" />
+
+        <RadioButton
+            android:id="@+id/RadioAdmin"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="92dp"
+            android:text="Administration"
+            android:textColor="#341c13" />
+    </RadioGroup>
+
+
+    <CheckBox
+        android:id="@+id/checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginLeft="-80dp"
+        android:layout_marginTop="-4dp"
+        android:layout_marginRight="3dp"
+        android:layout_marginBottom="-5dp"
+        android:scaleX=".6"
+        android:scaleY=".6"
+        android:text="Keep me logged in"
+        android:textColor="#341c13"
+        android:textSize="21dp"/>
+
+
+    <Button
+
+        android:id="@+id/buttonSigninId"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/signinbox"
+        android:text="SIGN IN"
+        android:textColor="#341c13"
+        android:textStyle="bold"/>
+
+    <Button
+        android:id="@+id/forgotpass"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-5dp"
+        android:scaleX=".6"
+        android:scaleY=".6"
+        android:text="Forgot password?"
+        android:textAllCaps="false"
+        android:textColor="#341c13"
+        android:textSize="18dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="-5dp"
+        android:text="Haven't you registered yet?"
+        android:textColor="#341c13"
+        android:textSize="13dp"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/buttonSignupID"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SIGN UP"
+        android:textColor="#341c13"
+        android:textSize="13dp"
+        android:textStyle="bold" />
+</LinearLayout>
