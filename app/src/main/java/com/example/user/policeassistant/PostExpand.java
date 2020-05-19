@@ -42,7 +42,7 @@ public class PostExpand extends AppCompatActivity {
     TextView CriminalName,Father,Mother,PresentAddress,Description,PermanentAddress,Rewards;
     private ImageView Criminalpic;
     String CName,Fname,Mname,Dst,description,permanentAddress,rewards,title;
-    ImageButton download;
+    ImageButton download,share;
     public String url;
     public String down;
 
@@ -62,6 +62,7 @@ public class PostExpand extends AppCompatActivity {
         Rewards=findViewById(R.id.nameboxrewards);
         Criminalpic=findViewById(R.id.criminalpic);
         download=findViewById(R.id.downloadpic);
+        share=findViewById(R.id.sharepic);
 
 
         Fname=getIntent().getStringExtra("father");
@@ -84,7 +85,7 @@ public class PostExpand extends AppCompatActivity {
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        String[] parts = user.getEmail().toString().split("@");
+        String[] parts = user.getEmail().split("@");
         String img = parts[0];
         final String imageDown=img+title;
 
@@ -131,25 +132,22 @@ public class PostExpand extends AppCompatActivity {
             }
         });
 
-    }
 
-    /*public void download(){
-        storageReference=firebaseStorage.getInstance().getReference("PostImage");
-        ref=storageReference.child("Snatch");
-
-        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+        share.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onSuccess(Uri uri) {
-                String url=uri.toString();
-                downloadfiles(PostExpand.this,"Snatch","jpeg",DIRECTORY_DOWNLOADS,url);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-
+            public void onClick(View v) {
+                Intent intent=new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                String shareBody="If you find any clue about this criminal please contact your nearest police station please.";
+                String shareSub="Police Case";
+                intent.putExtra(Intent.EXTRA_SUBJECT,shareSub);
+                intent.putExtra(Intent.EXTRA_TEXT,shareBody);
+                startActivity(Intent.createChooser(intent,"Share Via"));
             }
         });
-    }*/
+
+    }
+
     public void downloadfiles(Context context,String filename,String fileExtension,String dest,String url){
         DownloadManager downloadManager= (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
         Uri uri=Uri.parse(url);
