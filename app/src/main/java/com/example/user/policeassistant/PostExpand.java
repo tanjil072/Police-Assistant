@@ -1,6 +1,8 @@
 package com.example.user.policeassistant;
 
 import android.Manifest;
+import android.app.DownloadManager;
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -33,6 +35,8 @@ import java.io.IOException;
 import java.net.URI;
 import java.util.Random;
 
+import static android.os.Environment.DIRECTORY_DOWNLOADS;
+
 public class PostExpand extends AppCompatActivity {
 
     TextView CriminalName,Father,Mother,PresentAddress,Description,PermanentAddress,Rewards;
@@ -40,11 +44,7 @@ public class PostExpand extends AppCompatActivity {
     String CName,Fname,Mname,Dst,description,permanentAddress,rewards,title;
     ImageButton download;
     public String url;
-
-    Drawable drawable;
-    Bitmap bitmap;
-    String ImagePath;
-    Uri URI;
+    public String down;
 
     FirebaseStorage storage1 = FirebaseStorage.getInstance();
     StorageReference DownRef1 = storage1.getReferenceFromUrl("gs://police-assistant-d85ca.appspot.com/PostImage");
@@ -86,7 +86,7 @@ public class PostExpand extends AppCompatActivity {
 
         String[] parts = user.getEmail().toString().split("@");
         String img = parts[0];
-        String imageDown=img+title;
+        final String imageDown=img+title;
 
 
         try{
@@ -95,22 +95,23 @@ public class PostExpand extends AppCompatActivity {
 
                 title="NO_IMAGE.jpg";
             }
-        DownRef1.child(title).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
-            @Override
-            public void onSuccess(Uri uri) {
-                // Got the download URL for 'users/me/profile.png'
-                url= uri.toString();
-                Glide.with(getApplicationContext()).load(url).into(Criminalpic);
-            }
-        }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception exception) {
-                // Handle any errors
-            }
-        });
-    }catch (Exception e)
+            DownRef1.child(title).getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+                @Override
+                public void onSuccess(Uri uri) {
+                    // Got the download URL for 'PostImage/title'
+                    url= uri.toString();
+                    //down=url;
+                    Glide.with(getApplicationContext()).load(url).into(Criminalpic);
+                }
+            }).addOnFailureListener(new OnFailureListener() {
+                @Override
+                public void onFailure(@NonNull Exception exception) {
+                    // Handle any errors
+                }
+            });
+        }catch (Exception e)
         {
-            Toast.makeText(getApplicationContext(),"Error getting image in Post expanded",Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Error in getting image",Toast.LENGTH_SHORT).show();
         }
 
 
@@ -118,11 +119,44 @@ public class PostExpand extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
+                //download();
+                Toast.makeText(getApplicationContext(),"Downloading Image...",Toast.LENGTH_SHORT).show();
+                try{
+                    downloadfiles(PostExpand.this,imageDown,".jpg",DIRECTORY_DOWNLOADS,url);
+                }catch (Exception e)
+                {
+                    Toast.makeText(getApplicationContext(),"Image loading problem",Toast.LENGTH_SHORT).show();
+                }
 
             }
         });
 
+    }
+
+    /*public void download(){
+        storageReference=firebaseStorage.getInstance().getReference("PostImage");
+        ref=storageReference.child("Snatch");
+
+        ref.getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
+            @Override
+            public void onSuccess(Uri uri) {
+                String url=uri.toString();
+                downloadfiles(PostExpand.this,"Snatch","jpeg",DIRECTORY_DOWNLOADS,url);
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+
+            }
+        });
+    }*/
+    public void downloadfiles(Context context,String filename,String fileExtension,String dest,String url){
+        DownloadManager downloadManager= (DownloadManager) context.getSystemService(Context.DOWNLOAD_SERVICE);
+        Uri uri=Uri.parse(url);
+        DownloadManager.Request request=new DownloadManager.Request(uri);
+        request.setNotificationVisibility(DownloadManager.Request.VISIBILITY_VISIBLE_NOTIFY_COMPLETED);
+        request.setDestinationInExternalFilesDir(context,dest,filename+fileExtension);
+        downloadManager.enqueue(request);
     }
 
     @Override
